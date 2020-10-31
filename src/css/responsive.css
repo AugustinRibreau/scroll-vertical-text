@@ -12,6 +12,17 @@
 
 /* Mobile L */
 @media (max-width: 425px) {
+  .option {
+    padding-top: 10px;
+  }
+  .option__speed {
+    margin-top: 20px;
+  }
+  .option__speed,
+  .option__direction,
+  .option__color {
+    padding: 15px 0;
+  }
   .option__input {
     width: 300px;
     height: 40px;
