@@ -12,6 +12,10 @@
 
 /* Mobile L */
 @media (max-width: 425px) {
+  .option__input {
+    width: 300px;
+    height: 40px;
+  }
 }
 
 /* Mobile M */
