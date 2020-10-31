@@ -1,0 +1,17 @@
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 50px;
+  font-weight: 200;
+}
+
+.underTitle {
+  font-weight: 100;
+}
+
+.hand_animation {
+  margin: 0 0 12px 10px;
+  animation: hand_swing infinite 1s;
+}
