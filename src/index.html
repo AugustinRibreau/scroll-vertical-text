@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        <link rel="stylesheet" href="css/main.scss">
-        <title>Scroll text</title>
-    </head>
-    <body>
-    <div class="main"></div>
-    <script src="https://kit.fontawesome.com/989f89614e.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="css/main.scss" />
+    <link
+      rel="icon"
+      href="https://icons.deanishe.net/icon/fontawesome/444/arrows-alt/256.png"
+    />
+    <title>Scroll text</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="content">
+        <div class="title">
+          <p class="title">Hello</p>
+          <p class="hand_animation">👋</p>
+        </div>
+        <div class="underTitle">
+          Write - Choose your options - Share
+        </div>
+        <div class="option">
+          <input id="input" class="option__input" type="text" />
+          <div class="option__speed">
+            <p id="option__speed--left" class="option__button">
+              <i class="fas fa-minus"></i>
+            </p>
+            <p>Vitesse <pVitesse id="option__vitesse--text"></pVitesse></p>
+            <p id="option__speed--right" class="option__button">
+              <i class="fas fa-plus"></i>
+            </p>
+          </div>
+          <div class="option__direction">
+            <p
+              id="option__direction--left"
+              class="option__button button__selected"
+            >
+              <i class="fas fa-angle-double-left"></i>
+            </p>
+            <p>Direction</p>
+            <p id="option__direction--right" class="option__button">
+              <i class="fas fa-angle-double-right"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="display">
+        <p id="display__area"></p>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/989f89614e.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="js/app.js" charset="UTF-8"></script>
-    </body>
+  </body>
 </html>
