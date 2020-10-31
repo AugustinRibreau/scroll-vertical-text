@@ -3,13 +3,15 @@ const speed__right = document.getElementById("option__speed--right");
 const speed__left = document.getElementById("option__speed--left");
 const direction__right = document.getElementById("option__direction--right");
 const direction__left = document.getElementById("option__direction--left");
-const display__area = document.getElementById("display__area");
+const display__text = document.getElementById("display__text");
+const color = document.getElementById("option__color--input");
+
 let i = 15;
 
 input.oninput = () => display();
 
 function display() {
-  document.getElementById("display__area").innerHTML = input.value;
+  document.getElementById("display__text").innerHTML = input.value;
 }
 
 speed__right.addEventListener("click", () => changeSpeed(1, "+"));
@@ -21,6 +23,13 @@ direction__right.addEventListener("click", () =>
 direction__left.addEventListener("click", () =>
   changeDirection(direction__left, "left")
 );
+
+color.addEventListener("change", function () {
+  if (color.value === "#000000") {
+    return (display__text.style.color = "#ffffff");
+  }
+  display__text.style.color = color.value;
+});
 
 function changeSpeed(elem, operator) {
   if (operator === "+") {
@@ -35,14 +44,14 @@ function changeSpeed(elem, operator) {
     i = 120; // max 120s
   }
   document.getElementById("option__vitesse--text").innerHTML = i + "s";
-  display__area.style.animationDuration = `${i}s`;
+  display__text.style.animationDuration = `${i}s`;
 }
 
 function changeDirection(btn, dir) {
   removeClass(direction__left, "button__selected");
   removeClass(direction__right, "button__selected");
   addClass(btn, "button__selected");
-  display__area.style.animationName = `defilement-${dir}`;
+  display__text.style.animationName = `defilement-${dir}`;
 }
 
 function removeClass(elem, className) {
