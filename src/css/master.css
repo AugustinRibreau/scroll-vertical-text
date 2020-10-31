@@ -38,7 +38,7 @@ body {
   width: 100%;
   overflow: hidden;
 }
-#display__area {
+#display__text {
   display: inline-block;
   padding: 10px 0 10px 100%;
   font-size: 10vh;
