@@ -59,7 +59,7 @@ function changeSpeed(elem, operator) {
   if (i >= 120) {
     i = 120; // max 120s
   }
-  document.getElementById("option__vitesse--text").innerHTML = i + "s";
+  document.getElementById("option__speed--text").innerHTML = i + "s";
   display__text.style.animationDuration = `${i}s`;
 }
 
