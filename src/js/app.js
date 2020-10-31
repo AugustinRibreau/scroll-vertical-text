@@ -1,21 +1,20 @@
-const input = document.getElementById("input");
-const speed__right = document.getElementById("option__speed--right");
-const speed__left = document.getElementById("option__speed--left");
 const direction__right = document.getElementById("option__direction--right");
 const direction__left = document.getElementById("option__direction--left");
 const display__text = document.getElementById("display__text");
-const color = document.getElementById("option__color--input");
-
+const display__area = document.getElementById("display__area");
 let i = 15;
 
-input.oninput = () => display();
+document.getElementById("input").oninput = () =>
+  (document.getElementById("display__text").innerHTML = document.getElementById(
+    "input"
+  ).value);
 
-function display() {
-  document.getElementById("display__text").innerHTML = input.value;
-}
-
-speed__right.addEventListener("click", () => changeSpeed(1, "+"));
-speed__left.addEventListener("click", () => changeSpeed(1, "-"));
+document
+  .getElementById("option__speed--right")
+  .addEventListener("click", () => changeSpeed(1, "+"));
+document
+  .getElementById("option__speed--left")
+  .addEventListener("click", () => changeSpeed(1, "-"));
 
 direction__right.addEventListener("click", () =>
   changeDirection(direction__right, "right")
@@ -24,12 +23,29 @@ direction__left.addEventListener("click", () =>
   changeDirection(direction__left, "left")
 );
 
-color.addEventListener("change", function () {
-  if (color.value === "#000000") {
-    return (display__text.style.color = "#ffffff");
-  }
-  display__text.style.color = color.value;
+direction__left.addEventListener("click", function () {
+  changeDirection(direction__left, "left");
 });
+
+document
+  .getElementById("option__color--input")
+  .addEventListener("change", function () {
+    display__text.style.color = this.value;
+    testBackgroundColor(
+      display__text.style.color,
+      display__area.style.backgroundColor
+    );
+  });
+
+document
+  .getElementById("option__background--input")
+  .addEventListener("change", function () {
+    display__area.style.backgroundColor = this.value;
+    testBackgroundColor(
+      display__text.style.color,
+      display__area.style.backgroundColor
+    );
+  });
 
 function changeSpeed(elem, operator) {
   if (operator === "+") {
@@ -52,6 +68,13 @@ function changeDirection(btn, dir) {
   removeClass(direction__right, "button__selected");
   addClass(btn, "button__selected");
   display__text.style.animationName = `defilement-${dir}`;
+}
+
+function testBackgroundColor(color, background) {
+  if (color === background) {
+    display__text.style.color = "#ffffff";
+    display__area.style.backgroundColor = "#000000";
+  }
 }
 
 function removeClass(elem, className) {
