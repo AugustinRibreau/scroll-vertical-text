@@ -11,27 +11,27 @@ document.getElementById("input").oninput = () =>
 
 document
   .getElementById("option__speed--right")
-  .addEventListener("click", () => changeSpeed(1, "+"));
+  .addEventListener("click", () => change_speed(1, "+"));
 document
   .getElementById("option__speed--left")
-  .addEventListener("click", () => changeSpeed(1, "-"));
+  .addEventListener("click", () => change_speed(1, "-"));
 
 direction__right.addEventListener("click", () =>
-  changeDirection(direction__right, "right")
+  change_direction(direction__right, "right")
 );
 direction__left.addEventListener("click", () =>
-  changeDirection(direction__left, "left")
+  change_direction(direction__left, "left")
 );
 
 direction__left.addEventListener("click", function () {
-  changeDirection(direction__left, "left");
+  change_direction(direction__left, "left");
 });
 
 document
   .getElementById("option__color--input")
   .addEventListener("change", function () {
     display__text.style.color = this.value;
-    testBackgroundColor(
+    test_background_color(
       display__text.style.color,
       display__area.style.backgroundColor
     );
@@ -41,13 +41,13 @@ document
   .getElementById("option__background--input")
   .addEventListener("change", function () {
     display__area.style.backgroundColor = this.value;
-    testBackgroundColor(
+    test_background_color(
       display__text.style.color,
       display__area.style.backgroundColor
     );
   });
 
-function changeSpeed(elem, operator) {
+function change_speed(elem, operator) {
   if (operator === "+") {
     i += elem; // + 1
   } else {
@@ -63,26 +63,26 @@ function changeSpeed(elem, operator) {
   display__text.style.animationDuration = `${i}s`;
 }
 
-function changeDirection(btn, dir) {
-  removeClass(direction__left, "button__selected");
-  removeClass(direction__right, "button__selected");
-  addClass(btn, "button__selected");
+function change_direction(btn, dir) {
+  remove_class(direction__left, "button__selected");
+  remove_class(direction__right, "button__selected");
+  add_class(btn, "button__selected");
   display__text.style.animationName = `defilement-${dir}`;
 }
 
-function testBackgroundColor(color, background) {
+function test_background_color(color, background) {
   if (color === background) {
     display__text.style.color = "#ffffff";
     display__area.style.backgroundColor = "#000000";
   }
 }
 
-function removeClass(elem, className) {
+function remove_class(elem, className) {
   elem.classList.remove(className);
 }
-function addClass(elem, className) {
+function add_class(elem, className) {
   elem.classList.add(className);
 }
-function replaceClass(elem, oldClass, newClass) {
+function replace_class(elem, oldClass, newClass) {
   elem.classList.replace(oldClass, newClass);
 }
