@@ -3,6 +3,7 @@ const direction__left = document.getElementById("option__direction--left");
 const display__text = document.getElementById("display__text");
 const display__area = document.getElementById("display__area");
 let i = 15;
+let isFullScreen = false;
 
 document.getElementById("input").oninput = () =>
   (document.getElementById("display__text").innerHTML = document.getElementById(
@@ -40,6 +41,9 @@ document
 document
   .getElementById("option__background--input")
   .addEventListener("change", function () {
+    document.getElementById(
+      "fullscreen_section"
+    ).style.backgroundColor = this.value;
     display__area.style.backgroundColor = this.value;
     test_background_color(
       display__text.style.color,
@@ -62,6 +66,25 @@ function change_speed(elem, operator) {
   document.getElementById("option__speed--text").innerHTML = i + "s";
   display__text.style.animationDuration = `${i}s`;
 }
+
+document.getElementById("fullscreen").addEventListener("click", () => {
+  if (isFullScreen) {
+    remove_class(display__text, "full-height-text");
+    remove_class(document.getElementById("content"), "d-none");
+    remove_class(display__area, "full-height");
+    add_class(document.getElementById("display_fullscreen"), "d-none");
+    return (isFullScreen = false);
+  }
+  isFullScreen = true;
+  add_class(display__text, "full-height-text");
+  add_class(document.getElementById("content"), "d-none");
+  add_class(display__area, "full-height");
+  remove_class(document.getElementById("display_fullscreen"), "d-none");
+});
+
+document
+  .getElementById("display_fullscreen")
+  .addEventListener("click", () => display__area.requestFullscreen());
 
 function change_direction(btn, dir) {
   remove_class(direction__left, "button__selected");

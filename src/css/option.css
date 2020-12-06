@@ -73,3 +73,22 @@
   border: none;
   background: none;
 }
+
+.fullscreen_section {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: black;
+}
+
+.fullscreen_section i {
+  margin: 20px 20px 0 0;
+}
+
+#fullscreen,
+#display_fullscreen {
+  cursor: pointer;
+  color: white;
+  font-size: 30px !important;
+}

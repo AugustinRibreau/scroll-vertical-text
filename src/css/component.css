@@ -1,0 +1,19 @@
+.d-none {
+  display: none !important;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-block {
+  display: block;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.full-height-text {
+  font-size: 90vh !important;
+}
