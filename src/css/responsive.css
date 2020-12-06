@@ -27,6 +27,9 @@
     width: 300px;
     height: 40px;
   }
+  .fullscreen_section {
+    display: none !important;
+  }
 }
 
 /* Mobile M */
