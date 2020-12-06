@@ -14,7 +14,7 @@ body {
 
 .main {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: column;
   width: 100vw;
@@ -40,6 +40,7 @@ body {
   height: 30vh;
   width: 100%;
   overflow: hidden;
+  transition: 0.1s;
 }
 #display__text {
   display: inline-block;

@@ -11,6 +11,7 @@
 }
 
 .full-height {
+  transition: 1s;
   height: 100vh;
 }
 
